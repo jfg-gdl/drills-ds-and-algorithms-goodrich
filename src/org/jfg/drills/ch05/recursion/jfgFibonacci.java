@@ -22,6 +22,21 @@ public class jfgFibonacci {
         int [] f = new int[n + 1];
 
 
-        System.out.println(fibonacci(f, n, index));
+//        System.out.println(fibonacci(f, n, index));
+        fibonacciGood(4);
     }
+
+    private static long[] fibonacciGood(long n) {
+        long [] answer;
+        if (n <= 1) {
+            answer = new long [] {n, 0};
+
+        } else {
+            long [] temp = fibonacciGood(n - 1);
+            answer = new long [] {temp[0] + temp[1], temp[0]};
+
+        }
+        return answer;
+    }
+
 }
